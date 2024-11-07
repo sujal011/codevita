@@ -81,10 +81,10 @@ public class Solution {
 
         // Parsing the neighbor data for each device
         for (int i = 0; i < N; i++) {
-            int deviceId = devices[i].deviceId;
-            sc.nextLine();  // Consume the line with device ID
+            int deviceId = Integer.parseInt(sc.nextLine())-1;
+            // sc.nextLine();  // Consume the line with device ID
 
-            for (int j = 0; j < devices[i].numNeighbors; j++) {
+            for (int j = 0; j < devices[deviceId].numNeighbors; j++) {
                 int neighborId = sc.nextInt() - 1;
                 double distance = sc.nextDouble();
                 double angle = sc.nextDouble();
@@ -112,6 +112,6 @@ public class Solution {
         // Calculate and print the distance between startId and endId
         double distance = calculateDistance(positions[startId][0], positions[startId][1],
                                             positions[endId][0], positions[endId][1]);
-        System.out.printf("%.2f\n", distance);
+        System.out.printf("%.2f", distance);
     }
 }
